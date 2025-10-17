@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.luc.cs</groupId>
-    <artifactId>consoleapp</artifactId>
+    <artifactId>stopwatch</artifactId>
     <version>0.3</version>
     <packaging>jar</packaging>
 
@@ -93,7 +93,8 @@
                 <version>${jacoco.version}</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/Main*.class</exclude>
+                        <exclude>**/*Facade.class</exclude>
+                        <exclude>**/common/*.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
