@@ -9,7 +9,7 @@
     <version>0.3</version>
     <packaging>jar</packaging>
 
-    <name>consoleapp</name>
+    <name>stopwatch</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,6 +32,14 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ArchUnit for architecture testing -->
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit-junit5</artifactId>
+            <version>1.3.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -163,7 +171,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>edu.luc.cs.consoleapp.Main</mainClass>
+                            <mainClass>edu.luc.cs.stopwatch.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -189,7 +197,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>edu.luc.cs.consoleapp.Main</mainClass>
+                            <mainClass>edu.luc.cs.stopwatch.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
