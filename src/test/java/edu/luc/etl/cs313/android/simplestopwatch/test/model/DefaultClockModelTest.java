@@ -1,7 +1,7 @@
 package edu.luc.etl.cs313.android.simplestopwatch.test.model;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import edu.luc.etl.cs313.android.simplestopwatch.model.clock.DefaultClockModel;
 
@@ -13,12 +13,12 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.clock.DefaultClockModel;
  */
 public class DefaultClockModelTest extends AbstractClockModelTest {
 
-  @Before
+  @BeforeEach
   public void setUp() throws Exception {
     setModel(new DefaultClockModel());
   }
 
-  @After
+  @AfterEach
   public void tearDown() throws Exception {
     setModel(null);
   }

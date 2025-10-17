@@ -1,7 +1,7 @@
 package edu.luc.etl.cs313.android.simplestopwatch.test.model;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import edu.luc.etl.cs313.android.simplestopwatch.model.state.DefaultStopwatchStateMachine;
 
@@ -14,13 +14,13 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.state.DefaultStopwatchSta
  */
 public class DefaultStopwatchStateMachineTest extends AbstractStopwatchStateMachineTest {
 
-  @Before
+  @BeforeEach
   public void setUp() throws Exception {
     super.setUp();
     setModel(new DefaultStopwatchStateMachine(getDependency(), getDependency()));
   }
 
-  @After
+  @AfterEach
   public void tearDown() {
     setModel(null);
     super.tearDown();

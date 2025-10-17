@@ -1,7 +1,7 @@
 package edu.luc.etl.cs313.android.simplestopwatch.test.model;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import edu.luc.etl.cs313.android.simplestopwatch.model.time.DefaultTimeModel;
 
@@ -13,12 +13,17 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.time.DefaultTimeModel;
  */
 public class DefaultTimeModelTest extends AbstractTimeModelTest {
 
-  @Before
+  @Override
+  public String toString() {
+    return "DefaultTimeModelTest []";
+  }
+
+  @BeforeEach
   public void setUp() throws Exception {
     setModel(new DefaultTimeModel());
   }
 
-  @After
+  @AfterEach
   public void tearDown() throws Exception {
     setModel(null);
   }
