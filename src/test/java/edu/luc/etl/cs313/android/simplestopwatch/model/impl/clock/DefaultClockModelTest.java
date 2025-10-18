@@ -1,9 +1,9 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model;
+package edu.luc.etl.cs313.android.simplestopwatch.model.impl.clock;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import edu.luc.etl.cs313.android.simplestopwatch.model.clock.DefaultClockModel;
+import edu.luc.etl.cs313.android.simplestopwatch.model.clock.AbstractClockModelTest;
 
 /**
  * Concrete testcase subclass for the default clock model implementation.
@@ -12,11 +12,6 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.clock.DefaultClockModel;
  * @see http://xunitpatterns.com/Testcase%20Superclass.html
  */
 public class DefaultClockModelTest extends AbstractClockModelTest {
-
-  @Override
-  public String toString() {
-    return "DefaultClockModelTest []";
-  }
 
   @BeforeEach
   public void setUp() throws Exception {

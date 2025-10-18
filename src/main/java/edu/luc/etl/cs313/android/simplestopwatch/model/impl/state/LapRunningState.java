@@ -1,6 +1,8 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model.state;
+package edu.luc.etl.cs313.android.simplestopwatch.model.impl.state;
 
 import edu.luc.etl.cs313.android.simplestopwatch.R;
+import edu.luc.etl.cs313.android.simplestopwatch.model.state.StopwatchSMStateView;
+import edu.luc.etl.cs313.android.simplestopwatch.model.state.StopwatchState;
 
 class LapRunningState implements StopwatchState {
 

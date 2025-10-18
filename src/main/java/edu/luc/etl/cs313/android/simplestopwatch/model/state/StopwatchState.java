@@ -8,7 +8,7 @@ import edu.luc.etl.cs313.android.simplestopwatch.model.clock.TickListener;
  *
  * @author laufer
  */
-interface StopwatchState extends StopwatchUIListener, TickListener {
+public interface StopwatchState extends StopwatchUIListener, TickListener {
   void updateView();
   int getId();
 }

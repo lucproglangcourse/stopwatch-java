@@ -1,7 +1,9 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model.state;
+package edu.luc.etl.cs313.android.simplestopwatch.model.impl.state;
 
 import edu.luc.etl.cs313.android.simplestopwatch.common.StopwatchModelListener;
 import edu.luc.etl.cs313.android.simplestopwatch.model.clock.ClockModel;
+import edu.luc.etl.cs313.android.simplestopwatch.model.state.StopwatchState;
+import edu.luc.etl.cs313.android.simplestopwatch.model.state.StopwatchStateMachine;
 import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
 
 /**

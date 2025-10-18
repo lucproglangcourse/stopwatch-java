@@ -1,7 +1,10 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model.clock;
+package edu.luc.etl.cs313.android.simplestopwatch.model.impl.clock;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import edu.luc.etl.cs313.android.simplestopwatch.model.clock.ClockModel;
+import edu.luc.etl.cs313.android.simplestopwatch.model.clock.TickListener;
 
 /**
  * An implementation of the internal clock.

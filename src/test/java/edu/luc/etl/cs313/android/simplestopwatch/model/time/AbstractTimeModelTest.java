@@ -1,14 +1,12 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model;
+package edu.luc.etl.cs313.android.simplestopwatch.model.time;
 
-import static edu.luc.etl.cs313.android.simplestopwatch.common.Constants.SEC_PER_HOUR;
-import static edu.luc.etl.cs313.android.simplestopwatch.common.Constants.SEC_PER_MIN;
-import static edu.luc.etl.cs313.android.simplestopwatch.common.Constants.SEC_PER_TICK;
+import static edu.luc.etl.cs313.android.simplestopwatch.common.Constants.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
 
 /**
  * Testcase superclass for the time model abstraction. This is a simple unit

@@ -1,4 +1,4 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model;
+package edu.luc.etl.cs313.android.simplestopwatch.model.clock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,7 +6,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.jupiter.api.Test;
 
-import edu.luc.etl.cs313.android.simplestopwatch.model.clock.ClockModel;
 
 /**
  * Test case superclass for the autonomous clock model abstraction. Unit-tests

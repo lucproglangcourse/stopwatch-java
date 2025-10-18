@@ -1,9 +1,9 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model;
+package edu.luc.etl.cs313.android.simplestopwatch.model.impl.state;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import edu.luc.etl.cs313.android.simplestopwatch.model.state.DefaultStopwatchStateMachine;
+import edu.luc.etl.cs313.android.simplestopwatch.model.state.AbstractStopwatchStateMachineTest;
 
 /**
  * Concrete testcase subclass for the default stopwatch state machine

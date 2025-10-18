@@ -1,6 +1,8 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model.time;
+package edu.luc.etl.cs313.android.simplestopwatch.model.impl.time;
 
 import static edu.luc.etl.cs313.android.simplestopwatch.common.Constants.*;
+
+import edu.luc.etl.cs313.android.simplestopwatch.model.time.TimeModel;
 
 /**
  * An implementation of the stopwatch data model.

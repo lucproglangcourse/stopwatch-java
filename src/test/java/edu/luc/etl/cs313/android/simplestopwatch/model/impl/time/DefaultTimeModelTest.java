@@ -1,9 +1,9 @@
-package edu.luc.etl.cs313.android.simplestopwatch.model;
+package edu.luc.etl.cs313.android.simplestopwatch.model.impl.time;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import edu.luc.etl.cs313.android.simplestopwatch.model.time.DefaultTimeModel;
+import edu.luc.etl.cs313.android.simplestopwatch.model.time.AbstractTimeModelTest;
 
 /**
  * Concrete testcase subclass for the default time model implementation.
