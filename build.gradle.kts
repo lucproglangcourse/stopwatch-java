@@ -131,8 +131,6 @@ tasks.check {
 
 spotless {
     java {
-        // Using Eclipse formatter with custom config (2 spaces)
-        eclipse("4.31").configFile(".eclipse-formatter.xml")
         removeUnusedImports()
         trimTrailingWhitespace()
         endWithNewline()
