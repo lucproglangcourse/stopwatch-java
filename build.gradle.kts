@@ -136,17 +136,3 @@ spotless {
         endWithNewline()
     }
 }
-
-// Uncomment when Shadow plugin is enabled
-/*
-// Shadow plugin configuration for fat JAR (equivalent to maven-assembly-plugin)
-tasks.shadowJar {
-    archiveClassifier = "all"
-    mergeServiceFiles()
-}
-
-// Make build create the fat JAR
-tasks.build {
-    dependsOn(tasks.shadowJar)
-}
-*/
