@@ -2,9 +2,9 @@ package edu.luc.etl.cs313.android.simplestopwatch;
 
 public interface R {
   interface string {
-    public static final int STOPPED = 0;
-    public static final int RUNNING = 1;
-    public static final int LAP_STOPPED = 2;
-    public static final int LAP_RUNNING = 3;
+    int STOPPED = 0;
+    int RUNNING = 1;
+    int LAP_STOPPED = 2;
+    int LAP_RUNNING = 3;
   }
 }
