@@ -1,18 +1,15 @@
 package edu.luc.etl.cs313.android.simplestopwatch.architecture;
 
-import com.tngtech.archunit.core.importer.ImportOption;
-import com.tngtech.archunit.junit.AnalyzeClasses;
-import com.tngtech.archunit.junit.ArchTest;
-import com.tngtech.archunit.lang.ArchRule;
-
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+
+import org.junit.jupiter.api.Test;
 
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition;
 
 /**
  * Architecture tests to verify structural constraints and design rules.
- * 
+ *
  * @author laufer
  */
 public class PackageDependencyTest {
@@ -21,7 +18,7 @@ public class PackageDependencyTest {
    * Verifies that there are no cyclic dependencies between packages.
    * Package cycles make code harder to understand, test, and maintain.
    */
-  @ArchTest
+  @Test
   public void packages_should_be_free_of_cycles() {
     final var importedClasses =
         new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
@@ -37,7 +34,7 @@ public class PackageDependencyTest {
    * Verifies that there are no cyclic dependencies between sub-packages
    * at a more granular level (e.g., model.time, model.state, model.clock).
    */
-  @ArchTest
+  @Test
   public void subpackages_should_be_free_of_cycles() {
     final var importedClasses =
         new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
@@ -54,11 +51,11 @@ public class PackageDependencyTest {
    * - Standard Java types (java.., javax..)
    * - Types from the common package
    * - Other types from model packages
-   * 
+   *
    * This ensures the model layer is self-contained and doesn't depend on
    * external frameworks or UI-specific code.
    */
-  @ArchTest
+  @Test
   public void model_should_only_depend_on_java_common_or_model() {
     final var importedClasses =
         new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
