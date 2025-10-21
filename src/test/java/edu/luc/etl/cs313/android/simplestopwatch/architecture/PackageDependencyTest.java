@@ -6,6 +6,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 import org.junit.jupiter.api.Test;
 
 import com.tngtech.archunit.core.importer.ClassFileImporter;
+import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeJars;
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -16,7 +17,6 @@ import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition;
  *
  * @author laufer
  */
-@AnalyzeClasses(importOptions = {DoNotIncludeTests.class, DoNotIncludeJars.class})
 public class PackageDependencyTest {
 
   /**
@@ -26,7 +26,9 @@ public class PackageDependencyTest {
   @Test
   public void packages_should_be_free_of_cycles() {
     final var importedClasses =
-        new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
+        new ClassFileImporter()
+        .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+        .importPackages("edu.luc.etl.cs313.android.simplestopwatch");
 
     SlicesRuleDefinition.slices()
         .matching("edu.luc.etl.cs313.android.simplestopwatch.(*)..")
@@ -42,7 +44,9 @@ public class PackageDependencyTest {
   @Test
   public void subpackages_should_be_free_of_cycles() {
     final var importedClasses =
-        new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
+        new ClassFileImporter()
+        .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+        .importPackages("edu.luc.etl.cs313.android.simplestopwatch");
 
     SlicesRuleDefinition.slices()
         .matching("edu.luc.etl.cs313.android.simplestopwatch.(*).(*)..")
@@ -64,7 +68,9 @@ public class PackageDependencyTest {
   public void model_should_only_depend_on_java_common_or_model() {
     // TODO look for more elegant way to import only production classes
     final var importedClasses =
-        new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
+        new ClassFileImporter()
+        .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+        .importPackages("edu.luc.etl.cs313.android.simplestopwatch");
 
     classes()
         .that()
@@ -92,7 +98,9 @@ public class PackageDependencyTest {
   @Test
   public void model_should_not_depend_on_R_class() {
     final var importedClasses =
-        new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
+        new ClassFileImporter()
+        .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+        .importPackages("edu.luc.etl.cs313.android.simplestopwatch");
 
     noClasses()
         .that()
