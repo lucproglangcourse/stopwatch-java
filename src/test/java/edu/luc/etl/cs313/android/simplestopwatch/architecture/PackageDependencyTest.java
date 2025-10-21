@@ -1,10 +1,14 @@
 package edu.luc.etl.cs313.android.simplestopwatch.architecture;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import org.junit.jupiter.api.Test;
 
 import com.tngtech.archunit.core.importer.ClassFileImporter;
+import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeJars;
+import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
+import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition;
 
 /**
@@ -12,6 +16,7 @@ import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition;
  *
  * @author laufer
  */
+@AnalyzeClasses(importOptions = {DoNotIncludeTests.class, DoNotIncludeJars.class})
 public class PackageDependencyTest {
 
   /**
@@ -57,6 +62,7 @@ public class PackageDependencyTest {
    */
   @Test
   public void model_should_only_depend_on_java_common_or_model() {
+    // TODO look for more elegant way to import only production classes
     final var importedClasses =
         new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
 
@@ -71,6 +77,33 @@ public class PackageDependencyTest {
             "..common..",
             "..model..")
         .because("Model classes should be independent of external frameworks and UI code")
+        .check(importedClasses);
+  }
+
+  /**
+   * Ensures that model classes do not depend on the R class from the root package.
+   * This verifies that model classes don't have UI-specific resource dependencies.
+   *
+   * Note: R.java uses Integer.valueOf() instead of literal constants to prevent
+   * compile-time constant inlining, which allows ArchUnit to detect these dependencies
+   * at the bytecode level. With literal constants, the compiler would inline them and
+   * ArchUnit wouldn't be able to detect the dependency.
+   */
+  @Test
+  public void model_should_not_depend_on_R_class() {
+    final var importedClasses =
+        new ClassFileImporter().importPackages("edu.luc.etl.cs313.android.simplestopwatch");
+
+    noClasses()
+        .that()
+        .resideInAPackage("..model..")
+        .should()
+        .accessClassesThat()
+        .haveFullyQualifiedName("edu.luc.etl.cs313.android.simplestopwatch.R")
+        .orShould()
+        .accessClassesThat()
+        .haveNameMatching("edu\\.luc\\.etl\\.cs313\\.android\\.simplestopwatch\\.R\\$.*")
+        .because("Model classes should not depend on Android resource class R")
         .check(importedClasses);
   }
 }
