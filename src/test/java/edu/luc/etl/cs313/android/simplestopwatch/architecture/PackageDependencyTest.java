@@ -7,9 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption;
-import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeJars;
-import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
-import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition;
 
 /**
